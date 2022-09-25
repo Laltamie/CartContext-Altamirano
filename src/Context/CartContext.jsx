@@ -69,11 +69,10 @@ const CartProvider = (props) => {
         value={{
             cart,
             addProducto,
-            isInCart,
             borrarCart,
-            borrarProducto,
             totalUnidades,
-            totalPrecio
+            totalPrecio,
+            borrarProducto            
         }}
         >
             {props.children}

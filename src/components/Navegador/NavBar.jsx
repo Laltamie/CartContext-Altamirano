@@ -15,13 +15,13 @@ const NavBar = () => {
                     <Link to="/" className="nav-link active" aria-current="page">Inicio</Link>
                 </li>
                 <li className="nav-item">
-                <Link to="/categoria/invierno" className="nav-link " >Invierno</Link>
+                    <Link to="/categoria/invierno" className="nav-link " >Invierno</Link>
                 </li>
                 <li className="nav-item">
                     <Link to="/categoria/verano" className="nav-link "  >Verano</Link>
                 </li>
                 <li className="nav-item">
-                    {/* <a className="nav-link" href="#">Contacto</a> */}
+                <Link to="/contacto" className="nav-link" href="#">Contacto</Link>
                 </li>
             </ul>
             <ul className="nav justify-content-center">

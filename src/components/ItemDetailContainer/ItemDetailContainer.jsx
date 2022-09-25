@@ -11,8 +11,6 @@ const ItemDetailContainer = () => {
 
     const { detalleid } = useParams();
 
-
-
     useEffect(() => {
     
         const getProduct = new Promise ((res, rej) => {

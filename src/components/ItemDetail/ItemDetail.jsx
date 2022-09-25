@@ -10,13 +10,15 @@ import { CartContext } from "../../Context/CartContext";
 
 const ItemDetail = ({ item }) => {
 
-    const [agregarAlCarrito, setagregarAlCarrito] = useState(false);
+    const [cantidad, setCantidad] = useState(0);
     const { addProducto } = useContext(CartContext);
+
+
+
     const agregarProducto = (cantidad) => {
-        setagregarAlCarrito(true);
+        setCantidad(cantidad);
         addProducto(item, cantidad);
-      
-  };
+    };
 
     return (
         <>
@@ -24,7 +26,8 @@ const ItemDetail = ({ item }) => {
             <ul>
                 <li>
                     <div className="container conten-detalle">
-                    {/* <img src={'/images/' + item.img} className="card-img-top card-ItemD" width="150px" alt={item.name} /> */}
+                    <img src={'/images/' + item.img} className="card-img-top card-ItemD" width="150px" alt={item.name} />
+                        
                         <div className="conetenedor-detalle">
                             <h2>{item.name}</h2>
                                 <p>
@@ -33,11 +36,12 @@ const ItemDetail = ({ item }) => {
                                  </p>
                                 <h3>$ {item.precio}</h3>
                                 <hr />
-                             
-                                {
-                                    agregarAlCarrito ? <Link to="/cart">Finalizar Compra</Link> : <ItemCount stock={5} inicial={1} agregarProducto={agregarProducto}/>
-                                    
-                                }
+
+                                {cantidad === 0 ? (
+                                    <ItemCount stock={10} inicial={1} agregarProducto={agregarProducto} />
+                                ) : (
+                                    <Link to="/cart">Ir al carrito</Link>
+                                )}
 
     
                         </div>
