@@ -6,14 +6,10 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../../Context/CartContext";
 
 
-
-
 const ItemDetail = ({ item }) => {
 
     const [cantidad, setCantidad] = useState(0);
     const { addProducto } = useContext(CartContext);
-
-
 
     const agregarProducto = (cantidad) => {
         setCantidad(cantidad);
@@ -27,7 +23,6 @@ const ItemDetail = ({ item }) => {
                 <li>
                     <div className="container conten-detalle">
                     <img src={'/images/' + item.img} className="card-img-top card-ItemD" width="150px" alt={item.name} />
-                        
                         <div className="conetenedor-detalle">
                             <h2>{item.name}</h2>
                                 <p>
@@ -42,7 +37,6 @@ const ItemDetail = ({ item }) => {
                                 ) : (
                                     <Link to="/cart">Ir al carrito</Link>
                                 )}
-
     
                         </div>
                     </div>

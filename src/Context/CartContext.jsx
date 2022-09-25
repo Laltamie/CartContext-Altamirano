@@ -67,12 +67,12 @@ const CartProvider = (props) => {
         return (
         <CartContext.Provider
         value={{
-            cart,
             addProducto,
             borrarCart,
             totalUnidades,
             totalPrecio,
-            borrarProducto            
+            borrarProducto,
+            cart          
         }}
         >
             {props.children}

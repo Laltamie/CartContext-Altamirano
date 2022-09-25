@@ -6,8 +6,8 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 const Cart = () => {
     const { cart,  borrarCart } = useContext(CartContext);
 
-    console.log(cart, borrarCart)
-
+   
+   
 
   return (
     <>
