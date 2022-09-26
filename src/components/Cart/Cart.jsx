@@ -14,17 +14,18 @@ const Cart = () => {
           <div className="container greeting py-100">
 
             {cart.length === 0 ? (
-              <div>   <Link to="/">No hay elementos en el carrito, Comprar!</Link> </div>
+              <div className="container cont-cart"> <p>¡ No hay elementos en el carrito !</p>  <Link to="/">Comprar!</Link> </div>
             ) : (
               cart.map(item => <ItemCart key={item.id} item={item}/>)
             )}
 
           </div>
+          <hr />
           <div className="cart-conten">
             <p>
-              Total: {totalPrecio()}
+              Total: $ {totalPrecio()}
             </p>
-            <button onClick={borrarCart}>Vaciar Carrito</button>
+            <button type="button" className="btn btn-danger" onClick={borrarCart}>Vaciar Carrito</button>
           </div>
             
         </div>

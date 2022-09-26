@@ -8,3 +8,14 @@
 .cart-conten button {
     align-items: center;
 }
+.cart-conten p {
+    font-weight: bold;
+}
+
+.cont-cart {
+    margin: 100px;
+}
+
+.cont-cart a {
+    color: #008000 !important;
+}
