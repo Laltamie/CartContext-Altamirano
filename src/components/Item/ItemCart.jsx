@@ -1,23 +1,34 @@
 import React from 'react'
 import { useContext } from 'react';
+import "../Item/ItemCart.css"
 import { CartContext } from '../../Context/CartContext';
 
 
-const ItemCart = ({ product }) => {
-    console.log(product)
-    const { removeProduct } = useContext(CartContext);
+const ItemCart = ({ item }) => {
+   
+    const { borrarProducto } = useContext(CartContext);
 
   return (
-    <div className='itemCart'>
-        <img src={'/images/' + product.img} alt={product.title} />
-        <div>
-            <p>Título: {product.name}</p>
-            <p>Cantidad: {product.cantidad}</p>
-            <p>Precio u.: {product.precio}</p>
-            <p>Subtotal: $ {product.cantidad * product.precio}</p>
-            <button className='text-black px-3' onClick={() => removeProduct(product.id)}>Eliminar</button>
-        </div>
-    </div>
+
+    <div className="row">
+      <div className="container">
+            <div className="card card-Item" width="100px" margin="20px">
+              <img src={'/images/' + item.img} alt={item.title} className="card-img-top" width="150px"/>
+                 <div className="card-body">
+                  <h2 className="card-title text-center">Título: {item.name}</h2>
+                    <h3 className="card-text text-center">Cantidad: {item.cantidad}</h3>
+                    <h3 className="card-text text-center">Precio u.: {item.precio}</h3>
+                    <h3 className="card-text text-center">Subtotal: $ {item.cantidad * item.precio}</h3>
+                    <hr />
+                    <button type="button" className="btn btn-danger boton-eliminar" onClick={() => borrarProducto(item.id)}>Eliminar</button>
+                </div>
+          </div>
+      </div>
+
+    </div> 
+
+    
+
   )
 }
 

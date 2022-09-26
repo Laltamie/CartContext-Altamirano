@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import carritoLogo from "../../assets/images/carrito.png";
+import carritoLogo from "../../images/carrito.png";
 import "../Navegador/NavBar.css";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../Context/CartContext";
